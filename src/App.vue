@@ -1,7 +1,7 @@
 <template>
-  <Starjob></Starjob>
+  <pagelayout></pagelayout>
 </template>
 
 <script setup lang="ts">
-import Starjob from './components/Starjob.vue';
+import pagelayout from '@/components/layout/page-layout/index.vue';
 </script>
