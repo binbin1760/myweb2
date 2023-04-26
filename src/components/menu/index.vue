@@ -1,13 +1,11 @@
 <template>
-    <div class="sidebar-item" @click="isShow">
-        <img :src="siderBar.url" alt="">
-        <div v-show="show" class="sidebar-item-title">{{ siderBar.key }}</div>
+    <div class="sidebar-item">
+        <img class="iconfont" :src="siderBar.url" alt="">
+        <div class="sidebar-item-title animate__animated animate__fadeIn">{{ siderBar.key }}</div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
 //  侧栏菜单--数据结构：[{key:dashborad ,value:url}]
 type sidebar = {
     [key: string]: string
@@ -15,11 +13,9 @@ type sidebar = {
 defineProps<{
     siderBar: sidebar
 }>()
-// 菜单栏动画效果触发事件
-let show = ref(false)
-function isShow() {
-    console.log("1");
-    show.value = !show.value
+// 页面跳转
+function toSiderBarPage() {
+
 }
 </script>
 
@@ -35,9 +31,13 @@ function isShow() {
     text-align: center;
 }
 
-.sidebar-item img {
+.sidebar-item .iconfont {
     width: 40px;
     height: 40px;
+}
+
+.sidebar-item .iconfont:hover+.sidebar-item-title {
+    display: block;
 }
 
 .sidebar-item-title {
@@ -51,5 +51,6 @@ function isShow() {
     text-align: center;
     line-height: 40px;
     letter-spacing: 5px;
+    display: none;
 }
 </style>
