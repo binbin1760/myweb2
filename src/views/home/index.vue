@@ -13,10 +13,12 @@
 import sidebar from "@/components/menu/index.vue"
 // sidebar iconfont import
 import dashBoard from "@/assets/iconfont/主页.png"
+import editArticle from "@/assets/iconfont/编辑文章.png"
+import articlelist from "@/assets/iconfont/文章.png"
 const siderBar = [
   { key: "主页", routerUrl: "xxxx", url: dashBoard },
-  { key: "主页", routerUrl: "xxxx", url: dashBoard },
-  { key: "主页", routerUrl: "xxxx", url: dashBoard },
+  { key: "文章列表", routerUrl: "xxxx", url: articlelist },
+  { key: "文章编辑", routerUrl: "xxxx", url: editArticle },
 ]
 </script>
 
