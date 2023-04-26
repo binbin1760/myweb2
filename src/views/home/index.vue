@@ -1,7 +1,11 @@
 <template>
   <div class="home-page">
     <div class="menu">
-      <sidebar v-for="(item, index) in siderBar" :key="index" :siderBar="item"></sidebar>
+      <sidebar
+        v-for="(item, index) in siderBar"
+        :key="index"
+        :siderBar="item"
+      ></sidebar>
     </div>
     <div class="router-page">
       <router-view></router-view>
@@ -10,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import sidebar from "@/components/menu/index.vue"
+import sidebar from "@/components/menu/index.vue";
 // sidebar iconfont import
 import dashBoard from "@/assets/iconfont/主页.png"
 import editArticle from "@/assets/iconfont/编辑文章.png"
