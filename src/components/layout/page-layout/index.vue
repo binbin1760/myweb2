@@ -28,7 +28,6 @@
 }
 
 .layout .header {
-  padding: 24px 0;
   border-bottom: 1px solid #eeee;
   text-align: center;
   font-size: 24px;
