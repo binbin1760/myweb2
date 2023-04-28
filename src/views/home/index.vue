@@ -8,7 +8,7 @@
       ></sidebar>
     </div>
     <div class="router-page">
-      <router-view></router-view>
+      <router-view/>
     </div>
   </div>
 </template>
