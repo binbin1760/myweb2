@@ -5,6 +5,13 @@
     </div>
 </template>
 
+<script lang="ts">
+export default {
+    name:"siderbar",
+    inheritAttrs:false,
+}
+</script>
+
 <script setup lang="ts">
 //  侧栏菜单--数据结构：[{key:dashborad ,value:url}]
 type sidebar = {
@@ -44,9 +51,10 @@ function toSiderBarPage() {
     position: absolute;
     width: 200px;
     height: 40px;
-    background: rgb(95, 94, 94);
+    background: rgb(0, 0, 0);
     top: 0;
     left: 50px;
+    color: white;
     border-radius: 4px;
     text-align: center;
     line-height: 40px;
