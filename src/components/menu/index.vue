@@ -7,8 +7,8 @@
 
 <script lang="ts">
 export default {
-    name:"siderbar",
-    inheritAttrs:false,
+    name: "siderbar",
+    inheritAttrs: false,
 }
 </script>
 
@@ -36,6 +36,7 @@ function toSiderBarPage() {
     line-height: 50px;
     margin-top: 20px;
     text-align: center;
+    cursor: pointer;
 }
 
 .sidebar-item .iconfont {
@@ -47,7 +48,7 @@ function toSiderBarPage() {
     display: block;
 }
 
-.sidebar-item-title {
+.sidebar-item .sidebar-item-title {
     position: absolute;
     width: 200px;
     height: 40px;
