@@ -37,6 +37,7 @@
 
 .layout .content {
   display: flex;
+  align-items: center;
   width: 100%;
   flex: 1;
   justify-content: space-around;
