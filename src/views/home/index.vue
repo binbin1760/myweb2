@@ -14,10 +14,8 @@
 </template>
 
 <script setup lang="ts">
-import ArticleList from "./views/article-list.vue"
-import LifeTrends from "./views/life-trends.vue"
-import TaskList from './views/task-list.vue'
-import WebNav from './views/web-nav.vue'
+import {ArticleList,WebNav,TaskList,LifeTrends} from './components'
+
 </script>
 
 <style scoped>

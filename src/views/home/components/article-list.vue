@@ -7,7 +7,6 @@
             <div>测试数据</div>
             <div>测试数据</div>
             <div>测试数据</div>
-            <div>测试数据</div>
         </div>
         <div class="article-list-more">更多....</div>
     </div>
