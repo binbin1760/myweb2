@@ -1,24 +1,24 @@
 <template>
-  <pagelayout>
+  <LayOut>
     <div class="main">
       <div class="menu">
-        <sidebar v-for="(item, index) in siderBar" :key="index" :siderBar="item"></sidebar>
+        <Menu v-for="(item, index) in siderBar" :key="index" :siderBar="item"></Menu>
       </div>
       <div class="main-content">
         <router-view></router-view>
       </div>
     </div>
-  </pagelayout>
+  </LayOut>
 </template>
 
 <script setup lang="ts">
-import pagelayout from '@/components/layout/page-layout/index.vue';
-import sidebar from "@/components/menu/index.vue";
+import { LayOut,Menu} from '@/components'
 // sidebar iconfont import
 import home from "@/assets/iconfont/主页.png"
 import editArticle from "@/assets/iconfont/编辑文章.png"
 import articlelist from "@/assets/iconfont/文章.png"
 import dashboard from "@/assets/iconfont/仪表盘.png"
+//测试数据
 const siderBar = [
   { key: "主页", routerUrl: "/home", url: home },
   { key: "仪表盘", routerUrl: "xxxx", url: dashboard },
