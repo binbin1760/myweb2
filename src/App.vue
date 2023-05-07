@@ -6,7 +6,9 @@
     <div class="main">
       <Menu :menu="menu"></Menu>
       <div class="main-content">
-        <router-view></router-view>
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
       </div>
     </div>
   </LayOut>
@@ -18,9 +20,9 @@ import { LayOut, Menu, Header } from '@/components'
 //测试数据
 const menu = [
   { key: "主页", routerUrl: "/home", },
-  { key: "前端", routerUrl: "xxxx", },
-  { key: "游戏", routerUrl: "xxxx", },
-  { key: "工具库", routerUrl: "xxxx", },
+  { key: "胡思乱想", routerUrl: "xxxx", },
+  { key: "游戏daily", routerUrl: "xxxx", },
+  { key: "工作daily", routerUrl: "xxxx", },
   { key: "知识库", routerUrl: "xxxx", },
   { key: "时间轴", routerUrl: "xxxx", },
 ]
