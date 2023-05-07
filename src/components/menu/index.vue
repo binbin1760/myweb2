@@ -1,7 +1,6 @@
 <template>
-    <div class="sidebar-item">
-        <img class="iconfont" :src="siderBar.url" alt="">
-        <div class="sidebar-item-title animate__animated animate__fadeIn">{{ siderBar.key }}</div>
+    <div class="menu">
+        <div class="menu-item" v-for="(menuItem, index) in menu" :key="index">{{ menuItem.key }}</div>
     </div>
 </template>
 
@@ -14,52 +13,29 @@ export default {
 
 <script setup lang="ts">
 //  侧栏菜单--数据结构：[{key:dashborad ,value:url}]
-type sidebar = {
-    [key: string]: string
-}
 defineProps<{
-    siderBar: sidebar
+    menu: Array<Record<string, unknown>>
 }>()
 // 页面跳转
-function toSiderBarPage() {
+function toTargetPage() {
 
 }
 </script>
 
 <style scoped>
-.sidebar-item {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    border-radius: 4px;
-    background: rgb(95, 94, 94);
-    line-height: 50px;
-    margin-top: 20px;
-    text-align: center;
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.menu .menu-item {
+    width: auto;
+    padding: 21px 21px;
+    white-space: nowrap;
+    background-color: #fff;
     cursor: pointer;
-}
-
-.sidebar-item .iconfont {
-    width: 40px;
-    height: 40px;
-}
-
-.sidebar-item .iconfont:hover+.sidebar-item-title {
-    display: block;
-}
-
-.sidebar-item .sidebar-item-title {
-    position: absolute;
-    width: 200px;
-    height: 40px;
-    background: rgb(0, 0, 0);
-    top: 0;
-    left: 50px;
-    color: white;
-    border-radius: 4px;
-    text-align: center;
-    line-height: 40px;
-    letter-spacing: 5px;
-    display: none;
+    font-size: 14px;
 }
 </style>
