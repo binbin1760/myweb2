@@ -1,6 +1,8 @@
 <template>
   <div class="layout">
-    <div class="header">毛毛虫的口袋世界</div>
+    <div class="header">
+      <slot name="header"></slot>
+    </div>
     <div class="content">
       <slot></slot>
     </div>
@@ -24,30 +26,16 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   overflow-y: auto;
-}
-
-.layout .header {
-  border-bottom: 1px solid #eeee;
-  text-align: center;
-  font-size: 24px;
-  font-family: "阿里妈妈东方大楷 Regular";
-  background-color: rgb(3, 50, 136);
+  background-color: #ebebeb;
 }
 
 .layout .content {
-  display: flex;
-  align-items: center;
-  width: 100%;
   flex: 1;
-  justify-content: space-around;
-  background-image: url("@/assets/被逼无奈的选择.jpg");
-  background-position: center;
-  background-size: 100% 100%;
-  image-rendering: -webkit-optimize-contrast;
 }
 
 .layout .footer {
-  background: #F6F7F8;
+  background: #111;
 }
 </style>
