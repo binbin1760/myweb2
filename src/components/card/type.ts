@@ -1,4 +1,4 @@
-export interface trends {
+export interface Trends {
     title: string,
     imgurl: string,
     time: string,
