@@ -1,22 +1,27 @@
 <template>
   <div class="home">
+    <div class="home-left">
+      <Card></Card>
+    </div>
+    <div class="home-right">
+      <Search></Search>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-
+import { Card } from '@/components';
+import { Search } from './components';
 </script>
 
 <style scoped>
 .home {
   height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 }
 
-.home .home-top {
-  display: flex;
-  justify-content: space-between;
+.home .home-left {
+  margin-right: 20px;
 }
 </style>
