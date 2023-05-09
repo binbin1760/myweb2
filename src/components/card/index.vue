@@ -1,12 +1,12 @@
 <template>
     <div class="card">
         <div class="card-content">
-            <img class="card-img" src="@/assets/Avator-多老A梦.png" alt="">
+            <img class="card-img" :src="trends.imgurl" alt="">
             <div class="content">
-                <div class="content-title">iconfont</div>
-                <div class="content-time">2023-12-11 12:52:00</div>
+                <div class="content-title">{{trends.title}}</div>
+                <div class="content-time">{{trends.time}}</div>
                 <div class="intro">
-                    我还不知道怎么去弄iconfont的svg。。。。。
+                    {{trends.intro}}
                 </div>
             </div>
         </div>

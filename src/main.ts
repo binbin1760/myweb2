@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from "./router"
 import './index.css'
 import 'animate.css'
+import './iconfont.css'
 const app = createApp(App)
 app.use(router)
 app.mount('#app')

@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "iconfont";
+  src:url('iconfont.ttf?t=1683624118628') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-daibanshixiang:before {
+  content: "\e62f";
+}
+
+.icon-jibiji:before {
+  content: "\e60a";
+}
+
+.icon-youxitianchong:before {
+  content: "\e6b5";
+}
+
+.icon-gongju:before {
+  content: "\e73f";
+}
+
+.icon-fuwuqi:before {
+  content: "\e98e";
+}
+
+.icon-bilibili:before {
+  content: "\e609";
+}
+
+.icon-_houduankaifa:before {
+  content: "\e610";
+}
+
+.icon-rengongzhineng:before {
+  content: "\e6a7";
+}
+
+.icon-shujuku:before {
+  content: "\e997";
+}
+
+.icon-canjiren:before {
+  content: "\e63f";
+}
+
+.icon-email:before {
+  content: "\e6eb";
+}
+
+.icon-Vue:before {
+  content: "\e799";
+}
+
+.icon-Tag:before {
+  content: "\e775";
+}
+
+.icon-github:before {
+  content: "\ea0b";
+}
+
+.icon-css:before {
+  content: "\e61e";
+}
+
+.icon-typescript:before {
+  content: "\e6a3";
+}
+
+.icon-webpack:before {
+  content: "\e6ae";
+}
