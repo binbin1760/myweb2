@@ -19,10 +19,10 @@
 </template>
 
 <script setup lang="ts">
-import type { trends } from './type'
+import type { Trends } from './type'
 
 defineProps<{
-    trends: trends
+    trends: Trends
 }>()
 
 defineEmits<{
