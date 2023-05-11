@@ -15,7 +15,6 @@
 .search {
     margin-top: 10px;
     width: 22.5rem;
-    height: 7em;
     background: #fff;
     padding: 20px;
 }
