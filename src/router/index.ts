@@ -1,11 +1,27 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-
+// 前台
 const Home = () => import('@/views/home/index.vue')
+const All = () => import('@/views/home/all/index.vue')
+const Article = () => import('@/views/home/article/index.vue')
+const Game = () => import("@/views/home/game/index.vue")
+const Job = () => import('@/views/home/job/index.vue')
+const konwledge = () => import('@/views/home/knowledge/index.vue')
+const TimeAxis = () => import('@/views/home/time-axis/index.vue')
 
 const routes = [
-  { path: "/home", name: "主页", component: Home, },
-  { path: "/", redirect: '/home' }
+  // 前台
+  {
+    path: "/home", name: "主页", component: Home, children: [
+      { path: '/home/all', name: "主页", component: All },
+      { path: '/home/article', name: "胡思乱写", component: Article },
+      { path: '/home/Game', name: "游戏", component: Game },
+      { path: '/home/Job', name: "工作", component: Job },
+      { path: '/home/konwledge', name: "知识库", component: konwledge },
+      { path: '/home/TimeAxis', name: "时间轴", component: TimeAxis },
+    ]
+  },
+  { path: "/", redirect: '/home/all' }
 ]
 const router = createRouter({
   history: createWebHashHistory(),

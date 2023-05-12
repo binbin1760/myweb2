@@ -19,6 +19,7 @@ const iconType = `#icon-${props.icon}`
 .tag {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .tag .content {

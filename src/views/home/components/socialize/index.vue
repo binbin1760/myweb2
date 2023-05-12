@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { Tag } from '@/components'
-const mySocialieTags = ["bilibili", "github", "email"]
+const mySocialieTags = ["bilibili", "github", "youjian", "QQ", "weixin"]
 </script>
 
 <style scoped>

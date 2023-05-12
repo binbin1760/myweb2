@@ -1,6 +1,9 @@
 <template>
     <div class="menu">
-        <div class="menu-item" v-for="(menuItem, index) in menu" :key="index">{{ menuItem.key }}</div>
+        <!-- <div class="menu-item" v-for="(menuItem, index) in menu" :key="index">{{ menuItem.key }}</div> -->
+        <router-link class="menu-item" v-for="(menuItem, index) in menu" :key="index" :to="menuItem.routerUrl">
+            {{ menuItem.key }}
+        </router-link>
     </div>
 </template>
 
@@ -17,9 +20,6 @@ defineProps<{
     menu: Array<Record<string, unknown>>
 }>()
 // 页面跳转
-function toTargetPage() {
-
-}
 </script>
 
 <style scoped>
@@ -37,5 +37,7 @@ function toTargetPage() {
     background-color: #fff;
     cursor: pointer;
     font-size: 14px;
+    color: #000;
+    text-decoration: none;
 }
 </style>
