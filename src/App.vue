@@ -2,17 +2,30 @@
   <LayOut>
     <template v-slot:header>
       <Header />
+      <Menu :menu="menu" />
     </template>
     <div class="main">
+      <router-view v-slot="{ Component }">
         <keep-alive>
-          <router-view />
+          <component :is="Component" />
         </keep-alive>
+      </router-view>
     </div>
   </LayOut>
 </template>
 
 <script setup lang="ts">
-import { LayOut, Header } from '@/components'
+import { LayOut, Header, Menu } from '@/components'
+
+// page
+const menu = [
+  { key: "主页", routerUrl: "/home/all", },
+  { key: "胡思乱想", routerUrl: "/home/article", },
+  { key: "游戏daily", routerUrl: "/home/game", },
+  { key: "工作daily", routerUrl: "/home/job", },
+  { key: "知识库", routerUrl: '/home/konwledge', },
+  { key: "时间轴", routerUrl: "/home/timeAxis", },
+]
 </script>
 
 <style scoped></style>
