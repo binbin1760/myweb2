@@ -1,39 +1,24 @@
 <template>
-    <div class="search">
-        <div class="title">搜索</div>
+    <Nav title="搜索">
         <div class="search-box">
             <input class="search-input" type="text" placeholder="不要搜站内没有的东西">
             <div class="btn">站内搜索</div>
         </div>
-    </div>
+    </Nav>
 </template>
 
 <script setup lang="ts">
+import { Nav } from '@/components'
 </script>
 
 <style scoped>
-.search {
-    margin-top: 10px;
-    width: 22.5rem;
-    background: #fff;
-    padding: 20px;
-}
-
-.search .title {
-    width: 80px;
-    border-bottom: 1px solid #e67e22;
-}
-
-.search .search-box {
+.search-box {
     display: flex;
-    align-items: center;
-    width: 22.5rem;
-    margin-top: 1.375rem;
+    margin: 1.5rem 0 1rem 0;
     position: relative;
-    margin-top: 2.5rem;
 }
 
-.search .search-box .search-input {
+.search-box .search-input {
     width: 260px;
     height: 30px;
     border: 1px solid #ccc;
@@ -43,7 +28,7 @@
     font-size: 14px;
 }
 
-.search .search-box .btn {
+.search-box .btn {
     width: 80px;
     height: 32px;
     background: #e67e22;

@@ -1,7 +1,8 @@
 <template>
     <div class="menu">
         <!-- <div class="menu-item" v-for="(menuItem, index) in menu" :key="index">{{ menuItem.key }}</div> -->
-        <router-link class="menu-item" v-for="(menuItem, index) in menu" :key="index" :to="menuItem.routerUrl">
+        <router-link active-class="activeClass" class="menu-item" v-for="(menuItem, index) in menu" :key="index"
+            :to="menuItem.routerUrl">
             {{ menuItem.key }}
         </router-link>
     </div>
@@ -39,5 +40,9 @@ defineProps<{
     font-size: 14px;
     color: #000;
     text-decoration: none;
+}
+
+.activeClass {
+    border-bottom: 1px solid red;
 }
 </style>
