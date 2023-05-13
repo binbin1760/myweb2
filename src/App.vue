@@ -20,11 +20,11 @@ import { LayOut, Header, Menu } from '@/components'
 // page
 const menu = [
   { key: "主页", routerUrl: "/home/all", },
-  { key: "胡思乱想", routerUrl: "/home/article", },
+  { key: "胡思乱想", routerUrl: "/home/article/list", },
   { key: "游戏daily", routerUrl: "/home/game", },
   { key: "工作daily", routerUrl: "/home/job", },
   { key: "知识库", routerUrl: '/home/konwledge', },
-  { key: "时间轴", routerUrl: "/home/timeAxis", },
+  { key: "大事记", routerUrl: "/home/timeAxis", },
 ]
 </script>
 

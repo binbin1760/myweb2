@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     Header: typeof import('./src/components/header/index.vue')['default']
     Layout: typeof import('./src/components/layout/index.vue')['default']
     Menu: typeof import('./src/components/menu/index.vue')['default']
+    Nav: typeof import('./src/components/nav/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Tag: typeof import('./src/components/tag/index.vue')['default']
