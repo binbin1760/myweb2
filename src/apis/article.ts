@@ -9,8 +9,3 @@ const tsteData = {
 export function getArticleList() {
     return tsteData
 }
-// 获取文章
-const articleContent = '富文本编辑器内容'
-export function getArticleContent() {
-    return articleContent
-}

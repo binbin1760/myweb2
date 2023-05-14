@@ -5,7 +5,8 @@ export function getTargetTypeData() {
 const aritcleTypeNumber = [
     { key: "Vue", Value: 15 },
     { key: "Ts", Value: 15 },
-    { key: "JS", Value: 15 }
+    { key: "vite", Value: 15 },
+    { key: "node", Value: 15 },
 ]
 export function getTypeNumber() {
     return aritcleTypeNumber

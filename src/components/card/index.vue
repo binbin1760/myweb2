@@ -3,37 +3,40 @@
         <div class="card-content">
             <img class="card-img" :src="trends.imgurl" alt="">
             <div class="content">
-                <div class="content-title">{{trends.title}}</div>
-                <div class="content-time">{{trends.time}}</div>
+                <div class="content-title">{{ trends.title }}</div>
+                <div class="content-time">{{ trends.time }}</div>
                 <div class="intro">
-                    {{trends.intro}}
+                    {{ trends.intro }}
                 </div>
             </div>
         </div>
         <div class="tag">
             <div class="tag-content">
             </div>
-            <div class="btn">阅读全文</div>
+            <div @click="toPage(trends.title)" class="btn">阅读全文</div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import type { Trends } from './type'
+import { useRouter } from 'vue-router';
 
-defineProps<{
+const props = defineProps<{
     trends: Trends
 }>()
 
-defineEmits<{
-    (e: 'topage', title: string): void
-}>()
-
+const Router = useRouter()
+function toPage(title: string) {
+    Router.push({
+        path: '/home/content',
+        query: { title }
+    })
+}
 </script>
 
 <style scoped>
 .card {
-    height: 230px;
     width: 750px;
     background: #fff;
     padding: 10px;

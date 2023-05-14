@@ -1,17 +1,22 @@
 <template>
-    <Nav title="搜索">
-        <div class="search-box">
-            <input class="search-input" type="text" placeholder="不要搜站内没有的东西">
-            <div class="btn">站内搜索</div>
-        </div>
-    </Nav>
+    <div class="search">
+        <Nav title="搜索">
+            <div class="search-box">
+                <input class="search-input" type="text" placeholder="不要搜站内没有的东西">
+                <div class="btn">站内搜索</div>
+            </div>
+        </Nav>
+    </div>
 </template>
 
 <script setup lang="ts">
-import { Nav } from '@/components'
 </script>
 
 <style scoped>
+.search {
+    margin-top: 10px;
+}
+
 .search-box {
     display: flex;
     margin: 1.5rem 0 1rem 0;
