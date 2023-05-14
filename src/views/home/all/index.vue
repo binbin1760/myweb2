@@ -24,9 +24,6 @@ const tsteData = getAlldata()
 .all {
     display: flex;
     justify-content: center;
-}
-
-.all .all-left {
-    margin-right: 20px;
+    gap: 20px;
 }
 </style>

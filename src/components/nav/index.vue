@@ -16,13 +16,12 @@ defineProps<{
 <style scoped>
 .nav {
     width: 22rem;
-    margin-top: 10px;
     background: #fff;
     padding: 20px;
 }
 
 .nav .title {
-    width: 80px;
+    padding: 0 0 5px 0;
     border-bottom: 1px solid #e67e22;
 }
 </style>

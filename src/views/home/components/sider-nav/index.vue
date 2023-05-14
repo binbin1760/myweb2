@@ -16,6 +16,10 @@ import { getTypeNumber } from '@/apis';
 const typeNumber = getTypeNumber()
 </script>
 <style scoped>
+.sider-nav {
+    margin-top: 10px;
+}
+
 .type {
     cursor: pointer;
     margin-top: 0.5rem;

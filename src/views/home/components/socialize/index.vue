@@ -17,6 +17,10 @@ const mySocialieTags = getMysocial()
 </script>
 
 <style scoped>
+.my-socialize {
+  margin-top: 10px;
+}
+
 .my-socialize .content {
   display: flex;
   gap: 0.5rem;
