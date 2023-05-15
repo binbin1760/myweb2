@@ -1,24 +1,49 @@
 @font-face {
-  font-family: 'iconfont';
-  src: url('./assets/font/iconfont.woff2') format('woff2'),
-       url('./assets/font/iconfont.woff') format('woff'),
-       url('./assets/font/iconfont.ttf') format('truetype');
+  font-family: "iconfont";
+  /* Project id 4056691 */
+  src: url('iconfont.woff2?t=1684113237157') format('woff2'),
+    url('iconfont.woff?t=1684113237157') format('woff'),
+    url('iconfont.ttf?t=1684113237157') format('truetype');
 }
 
 .iconfont {
   font-family: "iconfont" !important;
-  color: white;
+  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon{
+.icon {
   width: 2em;
   height: 2em;
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+}
+
+.icon-shijianzhou-dangqianshijian:before {
+  content: "\e621";
+}
+
+.icon-shijianzhou:before {
+  content: "\e6f7";
+}
+
+.icon-shijianzhou1:before {
+  content: "\e62d";
+}
+
+.icon-QQ:before {
+  content: "\e667";
+}
+
+.icon-youjian:before {
+  content: "\e611";
+}
+
+.icon-weixin:before {
+  content: "\e607";
 }
 
 .icon-daibanshixiang:before {

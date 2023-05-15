@@ -1,35 +1,44 @@
 <template>
     <div class="time-axis">
-        <div v-for="(item, index ) in oddData" :key="index" class="odd">{{ item }}</div>
-        <div v-for="(item, index ) in evenData" :key="index" class="even">{{ item }}</div>
+        <div v-for="(item, index) in myEvents" :key="index" class="events">
+            <div class="time">{{ item.time }}</div>
+            <svg class="time-icon" aria-hidden="true">
+                <use xlink:href="#icon-shijianzhou1"></use>
+            </svg>
+            <div class="content">{{ item.value }}</div>
+        </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import { getMyEvent } from '@/apis/timeAxis';
-import { reactive } from 'vue';
 
 const myEvents = getMyEvent()
-let evenData = reactive<Array<Record<string, unknown>>>([])
-let oddData = reactive<Array<Record<string, unknown>>>([])
-
-for (let item in myEvents) {
-    let index = (item) as unknown as number / 2
-    if (index === 0 || index === 1) {
-        evenData[item] = myEvents[item]
-    } else {
-        oddData[item] = myEvents[item]
-    }
-}
 </script>
 
 <style scoped>
 .time-axis {
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.time-axis .line {
-    height: 20px;
-    border: 1px solid aqua;
+.time-axis .time-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.time-axis .events {
+    display: flex;
+    align-items: center;
+}
+
+.time-axis .events .time {
+    padding: 20px 0 20px 20px;
+}
+
+.time-axis .events .content {
+    padding: 20px 20px 20px 10px;
 }
 </style>

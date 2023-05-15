@@ -44,4 +44,8 @@
     right: 25px;
     cursor: pointer;
 }
+
+.search-box .btn:hover {
+    background: #303030;
+}
 </style>
