@@ -24,7 +24,7 @@ const menu = [
   { key: "工作daily", routerUrl: "/home/job", },
   { key: "胡思乱想", routerUrl: "/home/article/list", },
   { key: "知识库", routerUrl: '/home/konwledge', },
-  { key: "大事记", routerUrl: "/home/timeAxis", },
+  { key: "生涯", routerUrl: "/home/timeAxis", },
 ]
 </script>
 
