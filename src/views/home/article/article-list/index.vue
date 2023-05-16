@@ -5,17 +5,16 @@
         </div>
         <div class="title-search">
             <Search></Search>
-            <SiderNav></SiderNav>
+            <SiderNav title="技术分类"></SiderNav>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { Card } from '@/components';
 import { Search, SiderNav } from '@/views/home/components';
-import { getArticleList } from '@/apis/article';
+import { getAlldata } from '@/apis/all';
 
-const tsteData = getArticleList()
+const tsteData = getAlldata('article')
 
 </script>
 

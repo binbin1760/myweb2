@@ -1,5 +1,5 @@
 <template>
-    <router-view></router-view>
+    <div class="">测试数据</div>
 </template>
 
 <script setup lang="ts">

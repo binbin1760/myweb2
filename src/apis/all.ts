@@ -5,9 +5,17 @@ const tsteData = {
     imgurl: imgCard,
     time: '2023-12-11 12:52:00',
     intro: '我还不知道怎么去弄iconfont的svg。。。。。',
+    isTrend: true
 }
-export function getAlldata() {
-    return tsteData
+const tsteData2 = {
+    title: "需要加点动画",
+    imgurl: imgCard,
+    time: '2023-12-11 12:52:00',
+    intro: '我还不知道怎么去弄iconfont的svg。。。。。',
+    isTrend: false
+}
+export function getAlldata(type?: string) {
+    return type === "article" ? tsteData : tsteData2
 }
 
 const mySocialieTags = ["bilibili", "github", "youjian", "QQ", "weixin"]
