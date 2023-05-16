@@ -1,6 +1,6 @@
 <template>
     <div class="sider-nav">
-        <Nav title="分类">
+        <Nav :title="title">
             <div v-for="(type, index) in typeNumber" :key="index" class="type">
                 <span class="key">{{ type.key }}</span>
                 <span class="value">({{ type.Value }})</span>
@@ -13,6 +13,9 @@
 import { Nav } from '@/components'
 import { getTypeNumber } from '@/apis';
 
+withDefaults(defineProps<{ title?: string }>(), {
+    title: "分类"
+})
 const typeNumber = getTypeNumber()
 </script>
 <style scoped>

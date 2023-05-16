@@ -3,4 +3,5 @@ export interface Trends {
     imgurl: string,
     time: string,
     intro: string,
+    isTrend: boolean
 }

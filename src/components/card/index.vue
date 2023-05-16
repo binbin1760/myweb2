@@ -13,7 +13,7 @@
         <div class="tag">
             <div class="tag-content">
             </div>
-            <div @click="toPage(trends.title)" class="btn">阅读全文</div>
+            <div v-if="trends.isTrend" @click="toPage(trends.title)" class="btn">阅读全文</div>
         </div>
     </div>
 </template>
@@ -22,9 +22,7 @@
 import type { Trends } from './type'
 import { useRouter } from 'vue-router';
 
-const props = defineProps<{
-    trends: Trends
-}>()
+defineProps<{ trends: Trends }>()
 
 const Router = useRouter()
 function toPage(title: string) {

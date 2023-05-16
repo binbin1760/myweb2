@@ -5,13 +5,12 @@
         </div>
         <div class="right">
             <Search />
-            <SiderNav />
+            <SiderNav title="问题分类" />
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { Card } from '@/components';
 import { Search, SiderNav } from '../components';
 import { getAlldata } from '@/apis/all';
 

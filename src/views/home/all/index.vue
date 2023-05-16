@@ -6,7 +6,7 @@
         <div class="all-right">
             <Search></Search>
             <Socialize></Socialize>
-            <SiderNav></SiderNav>
+            <SiderNav title="分类"></SiderNav>
         </div>
     </div>
 </template>
