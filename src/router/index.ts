@@ -11,6 +11,8 @@ const TimeAxis = () => import('@/views/home/time-axis/index.vue')
 const ReadContent = () => import("@/views/home/content/index.vue")
 // 后台
 const Control = () => import('@/views/control/index.vue')
+const IndexControl = () => import('@/views/control/index-control/index.vue')
+const WrokBenches = () => import('@/views/control/work-benches/index.vue')
 const routes = [
   // 前台
   {
@@ -25,8 +27,13 @@ const routes = [
     ]
   },
   // 后台
-  { path: '/control', name: "控制台", component: Control },
-  { path: "/", redirect: '/home/all' }
+  {
+    path: '/control', name: "控制台", component: Control, children: [
+      { path: '/control/index', name: "主控台", component: IndexControl },
+      { path: '/control/workbenches', name: "工作台", component: WrokBenches },
+    ]
+  },
+  { path: "/", redirect: '/control/index' }
 ]
 const router = createRouter({
   history: createWebHashHistory(),

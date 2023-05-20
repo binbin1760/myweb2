@@ -1,9 +1,9 @@
 @font-face {
   font-family: "iconfont";
   /* Project id 4056691 */
-  src: url('iconfont.woff2?t=1684113237157') format('woff2'),
-    url('iconfont.woff?t=1684113237157') format('woff'),
-    url('iconfont.ttf?t=1684113237157') format('truetype');
+  src: url('iconfont.woff2?t=1684338470158') format('woff2'),
+    url('iconfont.woff?t=1684338470158') format('woff'),
+    url('iconfont.ttf?t=1684338470158') format('truetype');
 }
 
 .iconfont {
@@ -14,20 +14,46 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 图标大小  默认 2rem   min 1rem  lg 3rem  */
 .icon {
-  width: 2em;
-  height: 2em;
+  width: 2rem;
+  height: 2rem;
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
 }
 
-.icon-shijianzhou-dangqianshijian:before {
-  content: "\e621";
+.icon-min {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
 
-.icon-shijianzhou:before {
-  content: "\e6f7";
+.icon-lg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.icon-zhuye:before {
+  content: "\e60e";
+}
+
+.icon-tongji:before {
+  content: "\e671";
+}
+
+.icon-bianxie:before {
+  content: "\e600";
+}
+
+.icon-zhukongtai:before {
+  content: "\e7b6";
+}
+
+.icon-a-shezhi:before {
+  content: "\e608";
 }
 
 .icon-shijianzhou1:before {
@@ -48,10 +74,6 @@
 
 .icon-daibanshixiang:before {
   content: "\e62f";
-}
-
-.icon-jibiji:before {
-  content: "\e60a";
 }
 
 .icon-youxitianchong:before {

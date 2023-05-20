@@ -1,11 +1,11 @@
 <template>
-    <div class="control">
-        <LayoUt />
+    <div class="">
+        <SideMenu></SideMenu>
     </div>
 </template>
 
 <script setup lang="ts">
-import { LayoUt } from './components'
+import { SideMenu } from '../../components'
 </script>
 
 <style scoped></style>

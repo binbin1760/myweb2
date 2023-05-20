@@ -1,18 +1,22 @@
 <template>
     <div class="tag">
-        <svg class="icon" aria-hidden="true">
-            <use :xlink:href="iconType"></use>
+        <svg :class="className" aria-hidden="true">
+            <use :xlink:href="`#icon-${icon}`"></use>
         </svg>
         <div class="content">{{ title }}</div>
     </div>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
+
+withDefaults(defineProps<{
     icon: string,
     title?: string
-}>()
-const iconType = `#icon-${props.icon}`
+    className?: string
+}>(),
+    { className: "icon" }
+)
+
 </script>
 
 <style scoped>
