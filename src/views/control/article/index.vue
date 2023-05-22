@@ -1,11 +1,10 @@
 <template>
-    <div class="">
-        <SideMenu></SideMenu>
+    <div class="article">
+        文章管理
     </div>
 </template>
 
 <script setup lang="ts">
-import { SideMenu } from '../../components'
 </script>
 
 <style scoped></style>

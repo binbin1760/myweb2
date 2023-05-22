@@ -1,55 +1,49 @@
 <template>
-    <el-row class="tac">
-        <el-col :span="3">
-            <el-menu default-active="1" background-color="#001428" class="el-menu-vertical-demo" @open="handleOpen"
-                @close="handleClose" text-color="#fff" active-text-color="#fff" :collapse="false">
-                <el-sub-menu :index="index" v-for="(item, index) in menuData" :key="index">
-                    <template #title>
+    <el-col :span="3">
+        <el-menu :router="true" :default-active="router.currentRoute.value.fullPath" background-color="#001428"
+            class="el-menu-vertical-demo" text-color="#fff" :collapse="false">
+            <el-menu-item-group class="title">毛毛虫的口袋世界</el-menu-item-group>
+            <template v-for="item in menuData" :key="item.path">
+                <div v-if="!item.children">
+                    <el-menu-item :index="item.path">
                         <el-icon>
-                            <House />
+                            <Tag :icon="item.meta?.icon"></Tag>
                         </el-icon>
                         <span>{{ item.name }}</span>
-                    </template>
-                </el-sub-menu>
-            </el-menu>
-        </el-col>
-    </el-row>
+                    </el-menu-item>
+                </div>
+                <div v-else>
+                    <el-sub-menu>
+                        <template #title>
+                            <el-icon>
+                                <Tag :icon="item.meta?.icon"></Tag>
+                            </el-icon>
+                            <span>{{ item.name }}</span>
+                        </template>
+                        <el-menu-item v-for="children in item.children" :key="children" :index="children.path">
+                            {{ children.name }}
+                        </el-menu-item>
+                    </el-sub-menu>
+                </div>
+            </template>
+        </el-menu>
+    </el-col>
 </template>
 
 <script lang="ts" setup>
-import {
-    Document,
-    Menu as IconMenu,
-    House,
-    Setting,
-} from '@element-plus/icons-vue'
+import { useRouter } from 'vue-router';
+import { Tag } from '@/components';
 
-const handleOpen = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-}
-const handleClose = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-}
+const router = useRouter()
 
-const menuData = [
-    { index: "index", name: '主控台', path: '/control/index' },
-    { index: "index", name: '工作台', path: '/control/index' },
-    { index: "index", name: '胡思乱写', path: '/control/index' },
-    { index: "index", name: '行为分析', path: '/control/index' },
-    { index: "index", name: '设置', path: '/control/index' },
-]
+const menuData = router.options.routes[1].children
 </script>
 <style scoped>
-.tac {
-    height: 100vh;
-    background-color: #eee;
-}
-
 .el-menu-vertical-demo {
     height: 100%;
 }
 
-.tac .title {
+.title {
     text-align: center;
     padding: 10px;
     font-size: 18px;
