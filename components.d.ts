@@ -10,6 +10,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Card: typeof import('./src/components/card/index.vue')['default']
+    ElCion: typeof import('element-plus/es')['ElCion']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElMenu: typeof import('element-plus/es')['ElMenu']
@@ -21,7 +22,6 @@ declare module '@vue/runtime-core' {
     Layout: typeof import('./src/components/layout/index.vue')['default']
     Menu: typeof import('./src/components/menu/index.vue')['default']
     Nav: typeof import('./src/components/nav/index.vue')['default']
-    NMenu: typeof import('naive-ui')['NMenu']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Tag: typeof import('./src/components/tag/index.vue')['default']
