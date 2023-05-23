@@ -1,14 +1,26 @@
 <template>
-    <div class="" @click="test">测试</div>
+    <div class="index">
+        <Myinfo :my-info="getMyInfo()" />
+        <div class="index-down">
+            <writetrends />
+            <risk />
+        </div>
+    </div>
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
-const router = useRouter()
-function test() {
-    console.log(router.currentRoute.value.fullPath);
+import Myinfo from './myinfo.vue';
+import writetrends from './writetrends.vue';
+import risk from './risk.vue';
 
-}
+import { getMyInfo } from '@/apis';
+
 </script>
 
-<style scoped></style>
+<style scoped>
+.index-down {
+    margin-top: 5px;
+    display: flex;
+    gap: 10px;
+}
+</style>
