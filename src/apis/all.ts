@@ -36,3 +36,15 @@ const aritcleTypeNumber = [
 export function getTypeNumber() {
     return aritcleTypeNumber
 }
+
+const myInfo = {
+    name: "彬彬",
+    avator: null,
+    signature: "我回来是为了那些回不来的人",
+    risk: "13",
+    risked: "15"
+}
+// 获取个人信息
+export function getMyInfo() {
+    return myInfo
+}

@@ -13,7 +13,7 @@
                     </el-menu-item>
                 </div>
                 <div v-else>
-                    <el-sub-menu>
+                    <el-sub-menu :index="item.path">
                         <template #title>
                             <el-icon>
                                 <Tag :icon="item.meta?.icon"></Tag>

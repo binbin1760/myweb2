@@ -1,12 +1,14 @@
 <template>
-    <el-row class="tac">
+    <div class="tac">
         <SideMenu></SideMenu>
-        <router-view v-slot="{ Component }">
-            <keep-alive>
-                <component :is="Component" />
-            </keep-alive>
-        </router-view>
-    </el-row>
+        <div class="content">
+            <router-view v-slot="{ Component }">
+                <keep-alive>
+                    <component :is="Component" />
+                </keep-alive>
+            </router-view>
+        </div>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -15,7 +17,17 @@ import { SideMenu } from './components'
 
 <style scoped>
 .tac {
+    display: flex;
     height: 100vh;
-    background-color: #eee;
+    background-color: #f5f7f9;
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.content::-webkit-scrollbar {
+    width: 0;
 }
 </style>
