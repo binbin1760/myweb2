@@ -4,6 +4,7 @@ import Header from './header/index.vue'
 import Card from './card/index.vue'
 import Tag from './tag/index.vue'
 import Nav from './nav/index.vue'
+import Quill from './vue-quill-editor/index.vue'
 
-export { LayOut, Menu, Header, Card, Tag, Nav }
+export { LayOut, Menu, Header, Card, Tag, Nav, Quill }
 export * from '../components'
