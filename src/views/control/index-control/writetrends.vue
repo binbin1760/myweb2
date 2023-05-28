@@ -1,7 +1,8 @@
 <template>
     <div class="writetrends">
         <div class="write">
-            富文本编辑器---动态编写
+            <!-- 富文本编辑器 type=true 表示动态编辑器  false表示文章编辑器 -->
+            <Quill :type="true" />
         </div>
         <div class="list">
             <div class="list-title">动态</div>
@@ -11,18 +12,23 @@
 </template>
 
 <script setup lang="ts">
+import { Quill } from '@/components';
+
 </script>
 
 <style scoped>
 .writetrends {
+    width: 70%;
     margin-left: 5px;
-    flex-grow: 1;
 }
 
 .writetrends .write {
-    padding: 10px;
-    height: 150px;
+    height: auto;
     background-color: #fff;
+}
+
+.writetrends .write::-webkit-scrollbar {
+    width: 0;
 }
 
 .writetrends .list {
