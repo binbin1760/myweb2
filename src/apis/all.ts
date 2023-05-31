@@ -1,3 +1,5 @@
+import { request } from '@/request'
+
 import imgCard from '@/assets/Avator-多老A梦.png'
 
 const tsteData = {
@@ -47,4 +49,11 @@ const myInfo = {
 // 获取个人信息
 export function getMyInfo() {
     return myInfo
+}
+// 测试
+export function testAxios() {
+    return request({
+        method: "get",
+        url: "/api/home"
+    })
 }
