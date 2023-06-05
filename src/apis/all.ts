@@ -50,10 +50,3 @@ const myInfo = {
 export function getMyInfo() {
     return myInfo
 }
-// 测试
-export function testAxios() {
-    return request({
-        method: "get",
-        url: "/api/home"
-    })
-}

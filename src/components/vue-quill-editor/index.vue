@@ -1,16 +1,18 @@
 <template>
-    <QuillEditor ref="QuillEditorRef" :options="options" :content="textarea" content-type="html"
-        @update:content="textChange">
+    <QuillEditor ref="QuillEditorRef" :options="options" content-type="html" @update:content="textChange">
     </QuillEditor>
 </template>
 
 <script setup lang="ts">
 import { QuillEditor } from '@vueup/vue-quill'
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
-import { ref } from 'vue';
-const props = defineProps<{
-    type?: boolean
-}>()
+
+
+const props = defineProps({
+    type: Boolean
+})
+
+const emit = defineEmits(['contentData'])
 
 const trendsType = [
     ['bold', 'italic', 'underline', 'strike'], // 加粗 斜体 下划线 删除线
@@ -21,7 +23,6 @@ const trendsType = [
     [{ color: [] }, { background: [] }], // 字体颜色、字体背景颜色
     [{ align: [] }], // 对齐方式
     ['clean'], // 清除文本格式
-    ['image', 'link']
 ]
 
 const articleType = [
@@ -35,7 +36,7 @@ const articleType = [
     ['clean'], // 清除文本格式
     ['image']
 ]
-const textarea = ref('')
+
 const options = {
     debug: 'info',
     modules: {
@@ -45,13 +46,9 @@ const options = {
     readOnly: false,
     theme: 'snow',
 }
-// 
-const textChange = (e: any) => {
-    textarea.value = e
-    console.log(e.setNativeRange);
+const textChange = (e: unknown) => {
+    emit('contentData', e)
 }
-
-
 </script>
 
 <style scoped></style>
