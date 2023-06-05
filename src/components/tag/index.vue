@@ -23,7 +23,6 @@ withDefaults(defineProps<{
 .tag {
     display: flex;
     align-items: center;
-    cursor: pointer;
 }
 
 .tag .content {

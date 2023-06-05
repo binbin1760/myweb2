@@ -1,9 +1,9 @@
 @font-face {
   font-family: "iconfont";
   /* Project id 4056691 */
-  src: url('iconfont.woff2?t=1684338470158') format('woff2'),
-    url('iconfont.woff?t=1684338470158') format('woff'),
-    url('iconfont.ttf?t=1684338470158') format('truetype');
+  src: url('iconfont.woff2?t=1685969205058') format('woff2'),
+    url('iconfont.woff?t=1685969205058') format('woff'),
+    url('iconfont.ttf?t=1685969205058') format('truetype');
 }
 
 .iconfont {
@@ -36,12 +36,20 @@
   height: 3rem;
 }
 
-.icon-zhuye:before {
-  content: "\e60e";
+.icon-cocos:before {
+  content: "\e63d";
+}
+
+.icon-JavaScript:before {
+  content: "\e602";
 }
 
 .icon-tongji:before {
-  content: "\e671";
+  content: "\e630";
+}
+
+.icon-zhuye:before {
+  content: "\e60e";
 }
 
 .icon-bianxie:before {

@@ -1,6 +1,6 @@
 <template>
     <div class="my-info">
-        <img class="avator" :src="myInfo.avator ? myInfo.avator : defaultAvator" alt="">
+        <img class="avator" :src="myInfo.avator ? myInfo.avator : defaultAvator" @click="toHome">
         <div class="signature">
             <div class="name">{{ myInfo.name }}</div>
             <div class="my-signature">{{ myInfo.signature }}</div>
@@ -14,9 +14,14 @@
 
 <script setup lang="ts">
 import defaultAvator from '@/assets/Avator-多老A梦.png'
+import { useRouter } from 'vue-router';
 defineProps<{
     myInfo: Record<string, unknown>
 }>()
+const Router = useRouter()
+function toHome() {
+    Router.push('/home/all')
+}
 </script>
 
 <style scoped>
@@ -31,6 +36,7 @@ defineProps<{
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .signature {
