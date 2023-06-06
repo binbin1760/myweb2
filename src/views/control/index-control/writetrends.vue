@@ -40,8 +40,6 @@ import { reactive, ref } from 'vue';
 import { upload } from '@/apis';
 import { formateDate } from '@/utils'
 import { ElMessage } from 'element-plus'
-import "element-plus/theme-chalk/el-message.css";
-import "element-plus/theme-chalk/el-message-box.css";
 
 let quillData = ref('')
 let selectedTag = reactive<Array<string>>([])
