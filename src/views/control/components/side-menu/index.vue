@@ -54,4 +54,8 @@ const menuData = router.options.routes[1].children
 .el-menu-item:hover {
     background-color: #0066FF;
 }
+
+.el-menu {
+    border-right-width: 0;
+}
 </style>
