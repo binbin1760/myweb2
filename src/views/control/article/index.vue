@@ -21,13 +21,7 @@
         </div>
         <!-- 抽屉 -->
         <div>
-            <el-drawer v-model="drawer" direction="rtl">
-                <div class="seleted-item">
-                    <span>{{ drawerData.title }}</span>
-                    <span>{{ drawerData.date }}</span>
-                    <span>{{ drawerData.type }}</span>
-                </div>
-            </el-drawer>
+            <Draw v-model:data="drawerData" v-model:show="drawer"></Draw>
         </div>
     </div>
 </template>
@@ -40,6 +34,7 @@
  -->
 <script lang="ts" setup>
 import { computed, reactive, ref } from 'vue'
+import { Draw } from './component'
 
 interface Article {
     date: string
@@ -106,11 +101,5 @@ const tableData: Article[] = [
     align-self: center;
     height: 2rem;
     margin-bottom: 10px;
-}
-
-/* 抽屉 */
-.seleted-item {
-    display: flex;
-    flex-direction: column;
 }
 </style>

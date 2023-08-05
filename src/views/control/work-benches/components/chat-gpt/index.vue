@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="chat-input">
-            <el-input v-model="chatContet" :rows="4" type="textarea" placeholder="输入您的问题！" />
+            <el-input v-model="chatContet" :rows="4" type="textarea" placeholder="请说人话！" />
             <el-button type="primary">发送</el-button>
         </div>
     </div>
@@ -19,7 +19,6 @@
     role：GPT  |  user 
     时间
     content
-
     [
     {role:User,time:'2013-06-06 18:02:30',content："13213"},
     {role:Gpt,time:'2013-06-06 18:02:30',content："13213"},

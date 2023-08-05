@@ -21,8 +21,11 @@ const BehaviorAnalysis = () => import('@/views/control/behavior-analysis/index.v
 const Translate = () => import('@/views/control/behavior-analysis/Translate.vue')
 const Gpt = () => import('@/views/control/behavior-analysis/Gpt.vue')
 
-
+// 设置
 const Set = () => import('@/views/control/set/index.vue')
+const Personal = () => import('@/views/control/set/userInfo.vue')
+const System = () => import('@/views/control/set/system.vue')
+const Career = () => import('@/views/control/set/career.vue')
 const routes = [
   // 前台
   {
@@ -38,7 +41,10 @@ const routes = [
   },
   // 后台
   {
-    path: '/control', name: "控制台", component: Control, children: [
+    path: '/control',
+    name: "控制台",
+    component: Control,
+    children: [
       {
         path: '/control/index', name: "主控台", component: IndexControl, meta: {
           icon: "zhuye", role: ['admin']
@@ -46,12 +52,12 @@ const routes = [
       },
       {
         path: '/control/workbenches', name: "工作台", meta: {
-          icon: 'zhukongtai ', role: ["admin", "tourist"]
+          icon: 'zhukongtai ', role: ["admin", "friends"]
         }, component: WrokBenches
       },
       {
         path: '/control/write', name: "文章编写", meta: {
-          icon: 'bianxie ', role: ["admin"]
+          icon: 'bianxie ', role: ["admin",]
         }, component: Write
       },
       {
@@ -61,7 +67,7 @@ const routes = [
       },
       {
         path: '/control/behavior', name: "行为分析", meta: {
-          icon: 'tongji ', role: ["admin", "tourist"]
+          icon: 'tongji ', role: ["admin", "friends"]
         }, component: BehaviorAnalysis,
         children: [
           { path: "/control/behavior/translate", name: "百度翻译", component: Translate },
@@ -69,11 +75,20 @@ const routes = [
         ]
       },
       {
-        path: '/control/set', name: "系统设置", meta: {
-          icon: 'a-shezhi ', role: ["admin"]
-        }, component: Set
+        path: '/control/set', name: "设置", meta: {
+          icon: 'a-shezhi ', role: ["admin", "friends"]
+        }, component: Set,
+        children: [
+          { path: "/control/set/userInfo", name: "个人设置", component: Personal },
+          { path: "/control/set/Career", name: "生涯设置", component: Career },
+          { path: "/control/set/system", name: "系统设置", component: System },
+        ]
       },
-    ]
+    ],
+    // beforeEnter: (to: unknown, from: unknown, next: unknown) => {
+
+    // }
+
   },
   { path: "/", redirect: '/home/all' }
 ]

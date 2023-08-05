@@ -8,7 +8,7 @@
             title="Are you sure to my backend system ？my friends ">
             <el-form>
                 <el-form-item label="key">
-                    <el-input v-model="key" />
+                    <el-input v-model="key" type="password" />
                     <span class="tips">{{ tips }}</span>
                 </el-form-item>
             </el-form>
@@ -34,8 +34,13 @@ const key = ref<string>('')
 const router = useRouter()
 const tips = ref<string>('如果你向进入后台参观，请微信联系我')
 
-const buttonData = [
-    { role: "朋友", type: "success", roletype: "frend" },
+type buttonDataType = {
+    role: string,
+    type: 'success' | "danger",
+    roletype: string
+}
+
+const buttonData: Array<buttonDataType> = [
     { role: "admin", type: "danger", roletype: "admin" }
 ]
 //未登录
