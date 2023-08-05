@@ -16,7 +16,7 @@
                 </span>
                 <template #dropdown>
                     <el-dropdown-menu>
-                        <el-dropdown-item v-for="item in TagList" :key="item" @click="getTagList(item.key)">
+                        <el-dropdown-item v-for="(item, index) in TagList" :key="index" @click="getTagList(item.key)">
                             <div class="item">
                                 <Tag :icon="item.key"></Tag>
                             </div>

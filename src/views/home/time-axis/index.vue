@@ -1,44 +1,39 @@
 <template>
-    <div class="time-axis">
-        <div v-for="(item, index) in myEvents" :key="index" class="events">
-            <div class="time">{{ item.time }}</div>
-            <svg class="time-icon" aria-hidden="true">
-                <use xlink:href="#icon-shijianzhou1"></use>
-            </svg>
-            <div class="content">{{ item.value }}</div>
-        </div>
+    <div class="big-events">
+        <el-timeline>
+            <el-timeline-item v-for="(item, index) in BigEvents" :key="index" :type="item.type" :size="item.size">
+                <el-card>
+                    <h4>{{ item.timestamp }}</h4>
+                    <p>{{ item.content }}</p>
+                </el-card>
+            </el-timeline-item>
+        </el-timeline>
     </div>
 </template>
+
 
 <script setup lang="ts">
 import { getMyEvent } from '@/apis/timeAxis';
 
 const myEvents = getMyEvent()
+const BigEvents = [
+    {
+        content: 'Custom icon',
+        timestamp: '2018-04-12 20:46',
+        size: 'large',
+        type: 'primary',
+    },
+    {
+        content: 'Custom color',
+        timestamp: '2018-04-03 20:46',
+        size: 'large',
+        type: 'primary',
+    },
+]
 </script>
 
 <style scoped>
-.time-axis {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.time-axis .time-icon {
-    width: 2rem;
-    height: 2rem;
-}
-
-.time-axis .events {
-    display: flex;
-    align-items: center;
-}
-
-.time-axis .events .time {
-    padding: 20px 0 20px 20px;
-}
-
-.time-axis .events .content {
-    padding: 20px 20px 20px 10px;
+.big-events {
+    margin-top: 1.5rem;
 }
 </style>
