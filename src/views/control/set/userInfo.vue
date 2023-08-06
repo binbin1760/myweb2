@@ -9,7 +9,7 @@
         </el-upload>
         <div class="userinfo-form">
             <el-input v-model="name" placeholder="昵称" clearable />
-            <el-input v-model="key" placeholder="登录key" clearable type="password" />
+            <el-input v-model="id" placeholder="登录账号" clearable type="text" />
             <el-input v-model="signature" placeholder="签名" clearable />
             <div class="social-tag" v-for="(item, index) in socialTag" :key="index">
                 <Tag :icon="item.key"></Tag>
@@ -53,7 +53,7 @@ import type { UploadProps } from 'element-plus'
 
 const imageUrl = ref('')
 const name = ref('')
-const key = ref('')
+const id = ref('')
 const signature = ref('')
 const imageName = ref('')
 const socialTag = reactive<Array<Record<string, string>>>([])
@@ -94,7 +94,7 @@ function confirmFix() {
     uploadUserdata({
         avator: imageName.value,
         name: name.value,
-        key: key.value,
+        id: id.value,
         socialTag: socialTag,
         signature: signature.value
     }).then(res => {

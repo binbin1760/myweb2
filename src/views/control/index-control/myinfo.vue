@@ -16,7 +16,7 @@
 import defaultAvator from '@/assets/Avator-多老A梦.png'
 import { useRouter } from 'vue-router';
 defineProps<{
-    myInfo: Record<string, unknown>
+    myInfo: Record<string, any>
 }>()
 const Router = useRouter()
 function toHome() {

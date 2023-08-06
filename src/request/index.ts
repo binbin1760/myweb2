@@ -8,12 +8,12 @@ const http = axios.create({
 
 
 
-const userInfo = getUsrInfo()
+
 // 请求拦截
 http.interceptors.request.use(config => {
-    if (userInfo?.token) {
-        config.headers["Authorization"] = userInfo.token
-    }
+    const token = getUsrInfo()
+    config.headers['Content-Type'] = 'application/json'
+    config.headers["Authorization"] = token
     return config
 },
     error => {
@@ -21,7 +21,7 @@ http.interceptors.request.use(config => {
     })
 // 响应拦截---未做处理
 http.interceptors.response.use(response => {
-    return response.data.data
+    return response.data
 }, error => {
     return Promise.reject(error)
 })

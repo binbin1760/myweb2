@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-
+import { isLogin } from "@/apis"
+import { ElMessage } from 'element-plus'
 // 前台
 const Home = () => import('@/views/home/index.vue')
 const All = () => import('@/views/home/all/index.vue')
@@ -85,10 +86,16 @@ const routes = [
         ]
       },
     ],
-    // beforeEnter: (to: unknown, from: unknown, next: unknown) => {
-
-    // }
-
+    beforeEnter: (to: unknown, from: unknown, next: any) => {
+      isLogin().then(res => {
+        if (res.data) {
+          next()
+        } else {
+          ElMessage.error('请登陆后进入后台')
+          next('/')
+        }
+      })
+    }
   },
   { path: "/", redirect: '/home/all' }
 ]
