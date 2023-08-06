@@ -1,12 +1,9 @@
 import { request } from "@/request";
 
-export function login(key: string, type: string) {
+export function login(data: any) {
     return request({
         url: "/api/login",
-        method: "get",
-        params: {
-            key: key,
-            type: type
-        }
+        method: "post",
+        data: data
     })
 }

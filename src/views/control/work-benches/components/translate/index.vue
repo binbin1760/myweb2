@@ -1,12 +1,13 @@
 <template>
     <div class="translate">
-        <div class="translate-title">百度翻译</div>
         <div class="translate-worlds">
-            <el-input v-model="translateContent" :rows="10" type="textarea" :placeholder="placeholder" clearable />
+            <div class="translate-title">百度翻译</div>
+            <!-- <el-input v-model="translateContent" :rows="10" type="textarea" :placeholder="placeholder" clearable /> -->
         </div>
         <div class="after-translate">
             <div class="title">翻译结果</div>
-            <div class="content"></div>
+            <div class="content">
+            </div>
         </div>
         <div class="translate-history">
             <div class="title">翻译历史</div>
@@ -22,32 +23,33 @@ import { ref } from 'vue';
 const placeholder = ref<string>('请输入需要翻译的内容')
 const translateContent = ref<string>('')
 
-const testData = ["测试数据", "测试数据", "测试数据", "测试数据", "测试数据", "测试数据", "测试数据"]
+const testData = ["测试数据", "测试数据", "测试数据", "测试数据", "测试数据", "测试数据", "测试数据",]
 </script>
 
 <style scoped>
 .translate {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 60%;
+    width: 100%;
+    height: 100vh;
 }
 
 .translate .translate-title {
-    padding: 8px;
-    font-size: 18px;
+    padding: 0.5rem;
+    font-size: 1.125rem;
     font-weight: 600;
     border-bottom: 1px solid #202121;
 }
 
 /* 翻译内容 */
 .translate .translate-worlds {
-    border-radius: 8px;
+    flex-grow: 1;
+    border-radius: 0.5rem;
 }
 
 .translate .translate-worlds:deep() .el-textarea__inner {
     color: #000;
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 .translate .translate-worlds:deep() .el-textarea__inner::-webkit-scrollbar {
@@ -55,28 +57,29 @@ const testData = ["测试数据", "测试数据", "测试数据", "测试数据"
 }
 
 .translate .translate-worlds:deep() .el-textarea__inner::placeholder {
-    font-size: 18px;
+    font-size: 1.0125rem;
     color: #000;
 }
 
 /* 翻译结果 */
 .translate .after-translate {
-    border-radius: 8px;
-    height: 20rem;
+    flex-grow: 1;
+    border-radius: 0.5rem;
     overflow-y: auto;
-    overflow-wrap: break-word;
     background-color: #f5f7f9;
 }
 
 .translate .after-translate .content {
-    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
 }
 
 /* 翻译历史 */
 .translate .translate-history {
+    flex-grow: 1;
     background-color: #f5f7f9;
-    height: 300px;
-    overflow-y: auto;
 }
 
 .translate-history::-webkit-scrollbar {
@@ -84,7 +87,7 @@ const testData = ["测试数据", "测试数据", "测试数据", "测试数据"
 }
 
 .title {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 600;
     padding: 8px;
     border-bottom: 1px solid #202121;
@@ -92,9 +95,14 @@ const testData = ["测试数据", "测试数据", "测试数据", "测试数据"
 
 .translate .translate-history .content {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    padding: 8px;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    overflow-y: scroll;
+}
+
+.translate .translate-history .content::-webkit-scrollbar {
+    width: 0;
 }
 
 .translate .translate-history .content .tanslate-item {

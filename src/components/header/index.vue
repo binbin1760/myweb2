@@ -4,18 +4,20 @@
             <img src="@/assets/Avator-多老A梦.png">
         </div>
         <div class="words">一直学习，一直寻觅</div>
-        <el-dialog width="32rem" class="dialog" v-model="dialogFormVisible"
-            title="Are you sure to my backend system ？my friends ">
+        <el-dialog width="32rem" class="dialog" v-model="dialogFormVisible" title="登录">
             <el-form>
-                <el-form-item label="key">
-                    <el-input v-model="key" type="password" />
+                <el-form-item label="账号">
+                    <el-input v-model="id" type="text" />
+                </el-form-item>
+                <el-form-item label="密码">
+                    <el-input v-model="paw" type="password" />
                     <span class="tips">{{ tips }}</span>
                 </el-form-item>
             </el-form>
             <template #footer>
                 <span class="dialog-footer">
-                    <el-button v-for="(btn, index) in buttonData " :key="index" :type="btn.type"
-                        @click="toBackend(btn.roletype)">{{ btn.role }}
+                    <el-button v-for="(btn, index) in buttonData " :key="index" :type="btn.type" @click="toBackend">{{
+                        btn.role }}
                     </el-button>
                 </span>
             </template>
@@ -24,42 +26,47 @@
 </template>
 
 <script setup lang="ts">
-import { login } from "@/apis"
+import { login, isLogin } from "@/apis"
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { setUserInfo, getUsrInfo } from "@/utils";
+import { setUserInfo } from "@/utils";
 
 let dialogFormVisible = ref<boolean>(false)
-const key = ref<string>('')
+const id = ref<string>('')
+const paw = ref<string>('')
 const router = useRouter()
-const tips = ref<string>('如果你向进入后台参观，请微信联系我')
+const tips = ref<string>('如果你需要进入后台参观，请微信联系我')
 
 type buttonDataType = {
     role: string,
     type: 'success' | "danger",
-    roletype: string
 }
 
 const buttonData: Array<buttonDataType> = [
-    { role: "admin", type: "danger", roletype: "admin" }
+    { role: "登录", type: "danger" }
 ]
 //未登录
-function toBackend(type: string) {
-    login(key.value, type).then(res => {
-        setUserInfo({ role: res.data })
+function toBackend() {
+    login({ id: id.value, paw: paw.value }).then(res => {
+        if (res.status == 200) {
+            setUserInfo(res.data as unknown as string)
+            router.push("/control/index")
+            dialogFormVisible.value = false
+        } else {
+            tips.value = "密码错误，请重新登录"
+        }
     })
-
-    dialogFormVisible.value = false
-    router.push("/control/index")
 }
 // 登录后
 function backtoBackend() {
-    const userinfo = getUsrInfo()
-    if (userinfo?.token) {
-        router.push("/control/index")
-    } else {
-        dialogFormVisible.value = true
-    }
+    isLogin().then(res => {
+        if (res.data) {
+            router.push("/control/index")
+        } else {
+            dialogFormVisible.value = true
+        }
+    })
+
 }
 </script>
 
@@ -99,5 +106,6 @@ function backtoBackend() {
     margin-top: 10px;
     font-size: 14px;
     color: #f78989;
+    text-align: center;
 }
 </style>

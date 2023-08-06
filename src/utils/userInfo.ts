@@ -1,14 +1,12 @@
 // 存储用户信息
-export function setUserInfo(user: Record<string, string>) {
-    const userInfo = JSON.stringify(user)
-    localStorage.setItem('userInfo', userInfo)
+export function setUserInfo(token: string) {
+    localStorage.setItem('token', token)
 }
 //  读取用户信息
 export function getUsrInfo() {
-    const userInfo = localStorage.getItem("userInfo")
-    return JSON.parse(userInfo as unknown as string)
+    return localStorage.getItem("token")
 }
 //  删除用户信息
 export function delUserInfo() {
-    localStorage.removeItem("userInfo")
+    localStorage.removeItem("token")
 }

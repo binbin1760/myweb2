@@ -1,12 +1,11 @@
 <template>
     <div class="workbenches">
-        <ChatGpt></ChatGpt>
         <BaiduTranslate></BaiduTranslate>
     </div>
 </template>
 
 <script setup lang="ts">
-import { BaiduTranslate, ChatGpt } from './components'
+import { BaiduTranslate } from './components'
 </script>
 
 <style scoped>

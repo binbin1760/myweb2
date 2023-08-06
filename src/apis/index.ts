@@ -11,3 +11,5 @@ export * from './login'
 export * from './upload'
 
 export * from './uploadUserdata'
+
+export * from './isLogin'
