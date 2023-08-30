@@ -12,4 +12,7 @@ export * from './upload'
 
 export * from './uploadUserdata'
 
-export * from './isLogin'
+export * from './islogin'
+
+export * from './quillUpdateImg'
+export * from './deleteImg'

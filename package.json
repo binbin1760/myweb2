@@ -9,7 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vueup/vue-quill": "^1.2.0",
+    "@wangeditor/editor": "^5.1.23",
+    "@wangeditor/editor-for-vue": "^5.1.12",
     "animate.css": "^4.1.1",
     "axios": "^1.4.0",
     "date-fns": "^2.30.0",

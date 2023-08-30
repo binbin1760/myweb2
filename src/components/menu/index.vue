@@ -18,7 +18,7 @@ export default {
 <script setup lang="ts">
 //  侧栏菜单--数据结构：[{key:dashborad ,value:url}]
 defineProps<{
-    menu: Array<Record<string, unknown>>
+    menu: Array<Record<string, any>>
 }>()
 // 页面跳转
 </script>
