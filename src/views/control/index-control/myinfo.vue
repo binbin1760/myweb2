@@ -5,10 +5,6 @@
             <div class="name">{{ myInfo.name }}</div>
             <div class="my-signature">{{ myInfo.signature }}</div>
         </div>
-        <div class="Risk">
-            <div class="unRisk">未完成任务:{{ myInfo.risk }}</div>
-            <div class="Risked">已完成任务:{{ myInfo.risked }}</div>
-        </div>
     </div>
 </template>
 

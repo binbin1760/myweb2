@@ -58,14 +58,14 @@ function toBackend() {
     })
 }
 // 登录后
-function backtoBackend() {
-    isLogin().then(res => {
-        if (res.data) {
-            router.push("/control/index")
-        } else {
-            dialogFormVisible.value = true
-        }
-    })
+async function backtoBackend() {
+    const result = await isLogin()
+    console.log(result.data);
+    if (result.data) {
+        router.push("/control/index")
+    } else {
+        dialogFormVisible.value = true
+    }
 
 }
 </script>

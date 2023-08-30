@@ -7,7 +7,7 @@
                 <div v-if="!item.children">
                     <el-menu-item :index="item.path">
                         <el-icon>
-                            <Tag :icon="item.meta?.icon"></Tag>
+                            <Tag :icon="(item.meta?.icon as string)"></Tag>
                         </el-icon>
                         <span>{{ item.name }}</span>
                     </el-menu-item>
@@ -16,11 +16,12 @@
                     <el-sub-menu :index="item.path">
                         <template #title>
                             <el-icon>
-                                <Tag :icon="item.meta?.icon"></Tag>
+                                <Tag :icon="(item.meta?.icon as string)"></Tag>
                             </el-icon>
                             <span>{{ item.name }}</span>
                         </template>
-                        <el-menu-item v-for="children in item.children" :key="children" :index="children.path">
+                        <el-menu-item v-for="children in item.children" :key="(children as unknown as string)"
+                            :index="children.path">
                             {{ children.name }}
                         </el-menu-item>
                     </el-sub-menu>
@@ -37,6 +38,7 @@ import { Tag } from '@/components';
 const router = useRouter()
 
 const menuData = router.options.routes[1].children
+
 </script>
 <style scoped>
 .el-menu-vertical-demo {

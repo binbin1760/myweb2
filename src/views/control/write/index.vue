@@ -4,7 +4,7 @@
             <el-input v-model="title" placeholder="文章标题"></el-input>
         </div>
         <div class="content">
-            <Quill :type="false" @contentData="getContentData"></Quill>
+            <Quill height="30rem" @get-value="getContentData"></Quill>
         </div>
         <div class="taglist">
             <Tag v-for="(tagItem, index) in selectedTag" :key="index" :icon="tagItem"></Tag>
@@ -68,7 +68,9 @@ function getContentData(val: string) {
 //  上传文章数据
 function uploadArticle() {
     const date = formateDate(Date())
-    if (quillData.value !== '') {
+    console.log(quillData.value, '');
+
+    if (quillData.value !== '<p><br></p>') {
         upload({
             type: 'article',
             tag: selectedTag,

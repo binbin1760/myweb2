@@ -20,8 +20,8 @@
         </div>
         <div class="carrer-list">
             <el-timeline>
-                <el-timeline-item v-for="(item, index) in BigEvents" :key="index" :type="item.type" :size="item.size"
-                    @click="editEvents(item)">
+                <el-timeline-item v-for="(item, index) in BigEvents" :key="index" :type="(item.type as any)"
+                    :size="(item.size as any)" @click="editEvents(item)">
                     <el-card>
                         <h4>{{ item.timestamp }}</h4>
                         <p>{{ item.content }}</p>
