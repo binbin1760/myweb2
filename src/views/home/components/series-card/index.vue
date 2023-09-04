@@ -5,29 +5,24 @@
                 <div class="content-title">{{ trends.title }}</div>
                 <div class="content-time">{{ trends.createTime }}</div>
             </div>
-        </div>
-        <div class="tag">
-            <div class="tag-content">
-                <template v-for="(item, index) in trends.tag">
-                    <Tag :icon="item"></Tag>
-                </template>
+            <div class="list">
+                <div v-for="(item, index) in trends.lsit" :key="index" class="list-title"
+                    @click="toPage(item.title, trends.class, trends.title)">{{ item.title }}</div>
             </div>
-            <div @click="toPage(trends.title, trends.class)" class="btn">阅读全文</div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
-import { Tag } from '@/components'
 
 defineProps<{ trends: any }>()
 
 const Router = useRouter()
-function toPage(title: string, type: number) {
+function toPage(title: string, type: number, seriesTitle: string) {
     Router.push({
         path: '/home/content',
-        query: { title, type }
+        query: { title, type, seriesTitle }
     })
 }
 </script>
@@ -40,11 +35,16 @@ function toPage(title: string, type: number) {
     margin-top: 10px;
 }
 
-/* 文章配图 标题 简介 */
+.card .content {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0.25rem;
+}
+
+/* 文章配图 标题 简介  */
 .card .card-content {
     display: flex;
-    border-bottom: 1px solid #ccc;
     padding: 1rem;
+    flex-direction: column;
 }
 
 .card .card-img {
@@ -64,35 +64,19 @@ function toPage(title: string, type: number) {
     margin-top: 0.25rem;
 }
 
-.card .content .intro {
-    margin-top: 0.25rem;
-    font-size: 1rem;
-    color: #666;
-}
-
-/* tag */
-.card .tag {
+.card .list {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.25rem;
-}
-
-.card .tag .tag-content {
-    display: flex;
+    flex-direction: column;
     gap: 0.25rem;
 }
 
-/* 按钮 */
-.card .tag .btn {
-    padding: 0.4rem;
-    font-size: 0.875rem;
-    color: #fff;
-    background: #e67e22;
+.card .list .list-title {
+    padding-left: 0.5rem;
+    font-size: 0.75rem;
     cursor: pointer;
 }
 
-.card .tag .btn:hover {
-    background: #303030;
+.card .list .list-title:hover {
+    color: tomato;
 }
 </style>

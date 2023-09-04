@@ -3,7 +3,6 @@ import { isLogin } from "@/apis"
 import { ElMessage } from 'element-plus'
 // 前台
 const Home = () => import('@/views/home/index.vue')
-const All = () => import('@/views/home/all/index.vue')
 const ArticleList = () => import('@/views/home/article/article-list/index.vue')
 const Game = () => import("@/views/home/game/index.vue")
 const Job = () => import('@/views/home/job/index.vue')
@@ -30,14 +29,13 @@ const Career = () => import('@/views/control/set/career.vue')
 const routes = [
   // 前台
   {
-    path: "/home", name: "主页", component: Home, children: [
-      { path: '/home/all', name: "主页", component: All },
+    path: "/home", name: "home", component: Home, children: [
       { path: "/home/article/list", name: "文章列表", component: ArticleList },
-      { path: '/home/Game', name: "游戏", component: Game },
-      { path: '/home/Job', name: "工作", component: Job },
-      { path: '/home/konwledge', name: "知识库", component: konwledge },
-      { path: '/home/TimeAxis', name: "时间轴", component: TimeAxis },
-      { path: '/home/content', name: "详情", component: ReadContent },
+      { path: '/home/Game', name: "Game", component: Game },
+      { path: '/home/Job', name: "JOB", component: Job },
+      { path: '/home/konwledge', name: "konwledge", component: konwledge },
+      { path: '/home/TimeAxis', name: "TimeAxis", component: TimeAxis },
+      { path: '/home/content', name: "content", component: ReadContent },
     ]
   },
   // 后台
@@ -47,42 +45,42 @@ const routes = [
     component: Control,
     children: [
       {
-        path: '/control/index', name: "主控台", component: IndexControl, meta: {
-          icon: "zhuye", role: ['admin']
+        path: '/control/index', name: "control-control", component: IndexControl, meta: {
+          icon: "zhuye", role: ['admin'], name: "主控台"
         }
       },
       {
-        path: '/control/workbenches', name: "工作台", meta: {
-          icon: 'zhukongtai ', role: ["admin", "friends"]
+        path: '/control/workbenches', name: "control-workbenches", meta: {
+          icon: 'zhukongtai ', role: ["admin", "friends"], name: "工作台"
         }, component: WrokBenches
       },
       {
-        path: '/control/write', name: "文章编写", meta: {
-          icon: 'bianxie ', role: ["admin",]
+        path: '/control/write', name: "control-write", meta: {
+          icon: 'bianxie ', role: ["admin",], name: "文章编写"
         }, component: Write
       },
       {
-        path: '/control/article', name: "文章管理", meta: {
-          icon: 'bianxie ', role: ["admin"]
+        path: '/control/article', name: "control-article", meta: {
+          icon: 'bianxie ', role: ["admin"], name: "文章管理"
         }, component: Article
       },
       {
-        path: '/control/behavior', name: "行为分析", meta: {
-          icon: 'tongji ', role: ["admin", "friends"]
+        path: '/control/behavior', name: "control-behavior", meta: {
+          icon: 'tongji ', role: ["admin", "friends"], name: "行为分析"
         }, component: BehaviorAnalysis,
         children: [
-          { path: "/control/behavior/translate", name: "百度翻译", component: Translate },
-          { path: "/control/behavior/gpt", name: "ChatGpt", component: Gpt }
+          { path: "/control/behavior/translate", name: "translate", component: Translate, meta: { name: "百度翻译" } },
+          { path: "/control/behavior/gpt", name: "ChatGpt", component: Gpt, meta: { name: "ChatGpt" } }
         ]
       },
       {
-        path: '/control/set', name: "设置", meta: {
-          icon: 'a-shezhi ', role: ["admin", "friends"]
+        path: '/control/set', name: "set", meta: {
+          icon: 'a-shezhi ', role: ["admin", "friends"], name: "设置",
         }, component: Set,
         children: [
-          { path: "/control/set/userInfo", name: "个人设置", component: Personal },
-          { path: "/control/set/Career", name: "生涯设置", component: Career },
-          { path: "/control/set/system", name: "系统设置", component: System },
+          { path: "/control/set/userInfo", name: "userInfo", component: Personal, meta: { name: "个人设置" } },
+          { path: "/control/set/Career", name: "Career", component: Career, meta: { name: "生涯设置" } },
+          { path: "/control/set/system", name: "system", component: System, meta: { name: "系统设置" } },
         ]
       },
     ],
@@ -97,7 +95,7 @@ const routes = [
       })
     }
   },
-  { path: "/", redirect: '/home/all' }
+  { path: "/", redirect: '/home/Job' }
 ]
 const router = createRouter({
   history: createWebHashHistory(),

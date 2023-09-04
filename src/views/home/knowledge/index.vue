@@ -1,24 +1,32 @@
 <template>
     <div class="knowledge">
         <div class="letf">
-            <Card :trends="test"></Card>
+            <template v-for="(item, index) in articleList" :key="index">
+                <seriesCard :trends="item" />
+            </template>
         </div>
         <div class="right">
             <Search />
-            <SiderNav title="书籍名称" />
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { getAlldata } from '@/apis/all';
-import { Search, SiderNav } from '../components'
-const test = getAlldata("article")
+
+import { Search, seriesCard } from '../components'
+import { getArticle } from '@/apis';
+import { ref } from 'vue';
+
+const articleList = ref<any>([])
+getArticle(4).then(res => {
+    articleList.value = res.data.title
+})
 </script>
 
 <style scoped>
 .knowledge {
     display: flex;
+    justify-content: center;
     gap: 20px;
 }
 </style>

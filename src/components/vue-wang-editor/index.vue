@@ -19,10 +19,8 @@ const props = withDefaults(defineProps<{
     height: '500px'
 })
 const emit = defineEmits(['getValue'])
-// 编辑器实例，必须用 shallowRef
 const editorRef = shallowRef()
 
-// 内容 HTML
 const valueHtml = ref('')
 let oldImgList = ref<Array<string>>([])
 const toolbarConfig = {}
@@ -60,7 +58,7 @@ async function contentChange() {
     }
     oldImgList.value = temp
 }
-// 组件销毁时，也及时销毁编辑器
+
 onBeforeUnmount(() => {
     const editor = editorRef.value
     if (editor == null) return
@@ -68,7 +66,7 @@ onBeforeUnmount(() => {
 })
 
 const handleCreated = (editor: any) => {
-    editorRef.value = editor // 记录 editor 实例，重要！
+    editorRef.value = editor
 }
 watch(valueHtml, (newVal) => {
     emit('getValue', newVal)

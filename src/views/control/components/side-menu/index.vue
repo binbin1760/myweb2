@@ -9,7 +9,7 @@
                         <el-icon>
                             <Tag :icon="(item.meta?.icon as string)"></Tag>
                         </el-icon>
-                        <span>{{ item.name }}</span>
+                        <span>{{ (item as any).meta.name }}</span>
                     </el-menu-item>
                 </div>
                 <div v-else>
@@ -18,11 +18,11 @@
                             <el-icon>
                                 <Tag :icon="(item.meta?.icon as string)"></Tag>
                             </el-icon>
-                            <span>{{ item.name }}</span>
+                            <span>{{ (item as any).meta.name }}</span>
                         </template>
                         <el-menu-item v-for="children in item.children" :key="(children as unknown as string)"
                             :index="children.path">
-                            {{ children.name }}
+                            {{ (children as any).meta.name }}
                         </el-menu-item>
                     </el-sub-menu>
                 </div>
