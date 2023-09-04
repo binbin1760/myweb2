@@ -19,20 +19,13 @@
 <script setup lang="ts">
 import { LayOut } from '@/components'
 
-// page
 const menu = [
-  { key: "全部", routerUrl: "/home/all", },
-  { key: "技术踩坑", routerUrl: "/home/game", },
-  { key: "游戏整活", routerUrl: "/home/job", },
-  { key: "项目回顾", routerUrl: "/home/article/list", },
+  { key: "技术踩坑", routerUrl: "/home/job", },
+  { key: "游戏整活", routerUrl: "/home/game", },
+  { key: "项目相关", routerUrl: "/home/article/list", },
   { key: "读书笔记", routerUrl: '/home/konwledge', },
   { key: "我搞过的事情", routerUrl: "/home/timeAxis", },
 ]
 </script>
 
-<style scoped>
-.home .content {
-  display: flex;
-  justify-content: center;
-}
-</style>
+<style scoped></style>

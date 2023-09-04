@@ -33,6 +33,7 @@
 
 .layout .content {
   flex: 1;
+  overflow: auto;
 }
 
 .layout .footer {

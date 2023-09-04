@@ -1,26 +1,32 @@
 <template>
     <div class="art-list">
         <div class="art-title">
-            <Card :trends="tsteData"></Card>
+            <template v-for="(item, index) in articleList" :key="index">
+                <seriesCard :trends="item" />
+            </template>
         </div>
         <div class="title-search">
             <Search></Search>
-            <SiderNav title="技术分类"></SiderNav>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { Search, SiderNav } from '@/views/home/components';
-import { getAlldata } from '@/apis/all';
+import { Search, seriesCard } from '@/views/home/components';
+import { getArticle } from '@/apis';
+import { ref } from 'vue';
 
-const tsteData = getAlldata('article')
+const articleList = ref<any>([])
+getArticle(3).then(res => {
+    articleList.value = res.data.title
+})
 
 </script>
 
 <style scoped>
 .art-list {
     display: flex;
+    justify-content: center;
     gap: 20px;
 }
 </style>

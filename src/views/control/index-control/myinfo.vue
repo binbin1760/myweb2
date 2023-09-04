@@ -16,7 +16,7 @@ defineProps<{
 }>()
 const Router = useRouter()
 function toHome() {
-    Router.push('/home/all')
+    Router.push('/home/job')
 }
 </script>
 

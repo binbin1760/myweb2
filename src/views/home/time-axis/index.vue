@@ -16,7 +16,7 @@
 import { getMyEvent } from '@/apis/timeAxis';
 
 const myEvents = getMyEvent()
-const BigEvents = [
+const BigEvents: any = [
     {
         content: 'Custom icon',
         timestamp: '2018-04-12 20:46',
@@ -35,5 +35,8 @@ const BigEvents = [
 <style scoped>
 .big-events {
     margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 </style>
